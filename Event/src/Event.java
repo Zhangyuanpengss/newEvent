@@ -110,18 +110,19 @@ public class Event {
                 System.out.println("How many people you want to update?");
                 int ee=reader.nextInt();
                 for(int i=0;i<ee;++i){
+                    Scanner reader1=new Scanner(System.in);
                     System.out.println("Enter the name you want to update:");
-                    String nametofind=reader.nextLine();
-                    reader.nextLine();
+                    String nametofind=reader1.nextLine();
+                    reader1.nextLine();
                     for(Attendee attendee:eventattendees){
                         if(nametofind.equals(attendee.getName())){
                             System.out.println("Enter the new name or null if you do not want to update:");
-                            String newname=reader.nextLine();
+                            String newname=reader1.nextLine();
                             if(!newname.equals("null")){
                                 attendee.setName(newname);
                             }
                             System.out.println("Enter the new gender if you want to update:");
-                            String gender=reader.nextLine();
+                            String gender=reader1.nextLine();
                             if(gender.equals("M")){
                                 attendee.setGender('M');
                             }
@@ -129,12 +130,12 @@ public class Event {
                                 attendee.setGender('W');
                             }
                             System.out.println("Enter the new email or null if you do not want to update:");
-                            String newemail=reader.nextLine();
+                            String newemail=reader1.nextLine();
                             if(!newemail.equals("null")){
                                 attendee.setEmail(newemail);
                             }
                             System.out.println("Enter the new age or 0 if you do not want to update:");
-                            int newage=reader.nextInt();
+                            int newage=reader1.nextInt();
                             reader.nextLine();
                             if(newage!=0){
                                 attendee.setAge(newage);
